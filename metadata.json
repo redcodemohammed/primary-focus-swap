@@ -1,0 +1,7 @@
+{
+  "name": "Primary Focus Swap",
+  "description": "Automatically moves the focused window to the primary monitor and swaps the previous occupant to the secondary monitor.",
+  "uuid": "primary-focus-swap@yourusername.github.com",
+  "shell-version": [ "45", "46", "47" ],
+  "url": "https://github.com/yourusername/primary-focus-swap"
+}
