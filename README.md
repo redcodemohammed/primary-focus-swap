@@ -29,7 +29,7 @@ The logic is simple but effective, especially for multi-monitor setups (2, 3, or
 
 ### GNOME Version
 
-- Supports GNOME 45, 46, and 47 (ESM architecture).
+- Supports GNOME 45, 46, 47, 48, and 49 (ESM architecture).
 
 ### Pop Shell / Tiling Window Managers
 
