@@ -2,6 +2,6 @@
   "name": "Primary Focus Swap",
   "description": "Automatically moves the focused window to the primary monitor and swaps the previous occupant to the secondary monitor.",
   "uuid": "primary-focus-swap@redcodemohammed.github.com",
-  "shell-version": [ "45", "46", "47" ],
+  "shell-version": [ "45", "46", "47", "48", "49" ],
   "url": "https://github.com/redcodemohammed/primary-focus-swap"
 }
