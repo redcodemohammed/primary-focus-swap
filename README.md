@@ -47,17 +47,17 @@ This extension relies on standard GNOME window management calls (`move_to_monito
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/yourusername/primary-focus-swap.git
+   git clone https://github.com/redcodemohammed/primary-focus-swap.git
    ```
 
 2. **Copy to the extensions directory:**
 
    ```bash
    # Create the directory if it doesn't exist
-   mkdir -p ~/.local/share/gnome-shell/extensions/primary-focus-swap@yourusername.github.com
+   mkdir -p ~/.local/share/gnome-shell/extensions/primary-focus-swap@redcodemohammed.github.com
 
    # Copy files
-   cp -r primary-focus-swap/* ~/.local/share/gnome-shell/extensions/primary-focus-swap@yourusername.github.com/
+   cp -r primary-focus-swap/* ~/.local/share/gnome-shell/extensions/primary-focus-swap@redcodemohammed.github.com/
    ```
 
 3. **Restart GNOME Shell:**
@@ -67,7 +67,7 @@ This extension relies on standard GNOME window management calls (`move_to_monito
 
 4. **Enable the extension:**
    ```bash
-   gnome-extensions enable primary-focus-swap@yourusername.github.com
+   gnome-extensions enable primary-focus-swap@redcodemohammed.github.com
    ```
 
 ### Option 2: GNOME Extensions Website
