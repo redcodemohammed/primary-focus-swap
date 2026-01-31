@@ -1,6 +1,4 @@
-import Clutter from 'gi://Clutter';
 import Meta from 'gi://Meta';
-import Shell from 'gi://Shell';
 import { Extension } from 'resource:///org/gnome/shell/extensions/extension.js';
 
 export default class PrimaryFocusSwap extends Extension {
@@ -41,7 +39,8 @@ export default class PrimaryFocusSwap extends Extension {
         // 4. Identify the "victim" window currently on the primary monitor.
         // We get the window list, filter for primary monitor, and pick the top one.
         // Note: The 'focusedWindow' is technically the top one globally, but we look for the top one residing on primary.
-        const windows = global.display.get_tab_list(Meta.TabList.NORMAL, null);
+        const workspace = global.workspace_manager.get_active_workspace();
+        const windows = global.display.get_tab_list(Meta.TabList.NORMAL, workspace);
         const residentWindow = windows.find(w => 
             w.get_monitor() === primaryIndex && 
             !w.is_minimized() && 
