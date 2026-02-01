@@ -60,12 +60,20 @@ This extension relies on standard GNOME window management calls (`move_to_monito
    cp -r primary-focus-swap/* ~/.local/share/gnome-shell/extensions/primary-focus-swap@redcodemohammed.github.com/
    ```
 
-3. **Restart GNOME Shell:**
+3. **Compile the GSettings schema:**
 
+   This extension includes settings stored via GSettings. After copying the files, compile the schema inside the extension directory:
+
+   ```bash
+   cd ~/.local/share/gnome-shell/extensions/primary-focus-swap@redcodemohammed.github.com
+   glib-compile-schemas schemas
+   ```
+
+4. **Restart GNOME Shell:**
    - **X11:** Press <kbd>Alt</kbd> + <kbd>F2</kbd>, type `r`, and hit <kbd>Enter</kbd>.
    - **Wayland:** Log out and log back in.
 
-4. **Enable the extension:**
+5. **Enable the extension:**
    ```bash
    gnome-extensions enable primary-focus-swap@redcodemohammed.github.com
    ```
@@ -74,11 +82,16 @@ This extension relies on standard GNOME window management calls (`move_to_monito
 
 (Coming soon — once published)
 
-## Configuration (Planned Features)
+## Configuration
 
-- **Toggle behavior:** Choose between "Swap" (exchange places) or "Push" (just move focused window).
-- **Monitor selector:** Manually define which monitor is considered "Primary" for this extension.
-- **App blacklist:** Prevent specific apps (e.g., video players, OBS) from moving.
+Open the extension settings in the Extensions app to configure:
+
+- **When target monitor is occupied:** Swap (default) or Push
+- **Target monitor selection:** GNOME Primary monitor (default) or a Fixed monitor index
+- **Settle delay / retries:** Tune behavior for Alt-Tab races and tiling extensions
+- **Resident window scope:** Focused workspace (default), Active workspace, or All workspaces
+- **Ignore fullscreen windows** (default on)
+- **App blocklist:** Prevent specific apps (e.g., OBS, video players) from moving
 
 ## Contributing
 

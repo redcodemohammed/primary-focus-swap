@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.primary-focus-swap" path="/org/gnome/shell/extensions/primary-focus-swap/">
+    <key name="swap-mode" type="s">
+      <default>'swap'</default>
+      <choices>
+        <choice value='swap'/>
+        <choice value='push'/>
+      </choices>
+      <summary>Behavior when target monitor is occupied</summary>
+      <description>
+        swap: move the focused window to the target monitor and move the current resident window to the source monitor.
+        push: only move the focused window to the target monitor.
+      </description>
+    </key>
+
+    <key name="target-monitor-mode" type="s">
+      <default>'primary'</default>
+      <choices>
+        <choice value='primary'/>
+        <choice value='fixed'/>
+      </choices>
+      <summary>How to choose the target monitor</summary>
+      <description>
+        primary: use GNOME's primary monitor.
+        fixed: use the monitor index configured in fixed-target-monitor.
+      </description>
+    </key>
+
+    <key name="fixed-target-monitor" type="i">
+      <default>0</default>
+      <summary>Fixed target monitor index</summary>
+      <description>
+        Monitor index to use when target-monitor-mode is set to fixed. Indices may change when displays are re-arranged.
+      </description>
+    </key>
+
+    <key name="settle-delay-ms" type="u">
+      <default>150</default>
+      <summary>Delay before acting after focus changes</summary>
+      <description>
+        Debounce/settle delay in milliseconds after a focus change before moving windows.
+      </description>
+    </key>
+
+    <key name="retry-count" type="u">
+      <default>2</default>
+      <summary>Retry attempts</summary>
+      <description>
+        Number of verification retries after moving windows. Useful with tiling extensions that fight move_to_monitor.
+      </description>
+    </key>
+
+    <key name="retry-delay-ms" type="u">
+      <default>120</default>
+      <summary>Retry delay</summary>
+      <description>
+        Delay in milliseconds between retries.
+      </description>
+    </key>
+
+    <key name="scope-mode" type="s">
+      <default>'focused-workspace'</default>
+      <choices>
+        <choice value='focused-workspace'/>
+        <choice value='active-workspace'/>
+        <choice value='all-workspaces'/>
+      </choices>
+      <summary>Where to look for the resident window</summary>
+      <description>
+        focused-workspace: pick the resident window from the focused window's workspace.
+        active-workspace: pick from the current active workspace.
+        all-workspaces: pick from all workspaces (active workspace is preferred).
+      </description>
+    </key>
+
+    <key name="ignore-fullscreen" type="b">
+      <default>true</default>
+      <summary>Ignore fullscreen windows</summary>
+      <description>
+        If enabled, do not move a focused window that is fullscreen and do not displace a fullscreen resident.
+      </description>
+    </key>
+
+    <key name="app-blocklist" type="as">
+      <default>[]</default>
+      <summary>Apps to never move</summary>
+      <description>
+        List of app identifiers to exclude from moves. Entries can be GNOME app IDs (desktop file IDs) or WM_CLASS strings.
+      </description>
+    </key>
+  </schema>
+</schemalist>
